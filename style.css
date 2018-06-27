@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+header, footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+header {
+    top: 0;
+}
+header h1 {
+    line-height: 1.8em;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+footer {
+    bottom: 0;
+}
+#road {
+    background-color: steelblue;
+    background-image: url("./img/road2.jpg");
+    height: 800px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#maluch-container {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+.wheel {
+    position: absolute;
+    bottom: -28px;
+}
+#back-wheel {
+    left: 130px;
+}
+#front-wheel {
+    right: 70px;
+}
+
+@keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  from {
+      background-position: 0%;
+  }
+  to {
+      background-position: 10000%;
+  }
+}
