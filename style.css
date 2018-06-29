@@ -2,35 +2,117 @@
     padding: 0;
     margin: 0;
 }
+
 header, footer {
     position: fixed;
     width: 100%;
     text-align: center;
 }
+
 header {
     top: 0;
 }
+
 header h1 {
     line-height: 1.8em;
+    color: #EEEEEE;
 }
+
 main {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
 }
+
 footer {
     bottom: 0;
 }
+
+#swipe-tooltip {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -12%;
+}
+
+#swipe-tooltip span{
+    background: #DDDDFF;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#shrink-button {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #0A0A0A;
+    color: #FFF;
+}
+
 #road {
-    background-color: steelblue;
-    background-image: url("./img/road2.jpg");
-    height: 800px;
+    height: 100vh;
     width: 100vw;
+    background-color: steelblue;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-repeat: repeat-x;
+    overflow: hidden;
 }
+@media screen and (max-width: 479px) {
+    #road {
+        height: 100vh;
+        background-image: url("./img/mobile/road.jpg");
+    }
+    #maluch {
+        width: 488px;
+        height: 204px;
+        background-image: url("./img/mobile/maluch.png");
+    }
+    .wheel {
+        width: 85px;
+        height: 85px;
+        background-image: url("./img/mobile/wheel.png");
+    }
+
+}
+@media screen and (max-width: 1023px) {
+    #road {
+        background-image: url("./img/mobile/road.jpg");
+    }
+    #maluch {
+        width: 488px;
+        height: 204px;
+        background-image: url("./img/mobile/maluch.png");
+    }
+    .wheel {
+        width: 85px;
+        height: 85px;
+        background-image: url("./img/mobile/wheel.png");
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    #road {
+        background-image: url("./img/desktop/road.jpg");
+    }
+    #maluch {
+        width: 975px;
+        height: 408px;
+        background-image: url("./img/desktop/maluch.png");
+    }
+    .wheel {
+        width: 170px;
+        height: 170px;
+        background-image: url("./img/desktop/wheel.png");
+    }
+}
+
+
 #maluch-container {
     display: inline-block;
     position: relative;
@@ -38,13 +120,13 @@ footer {
 }
 .wheel {
     position: absolute;
-    bottom: -28px;
+    bottom: -7.5%;
 }
 #back-wheel {
-    left: 130px;
+    left: 13%;
 }
 #front-wheel {
-    right: 70px;
+    right: 7%;
 }
 
 @keyframes spin {
@@ -71,4 +153,88 @@ footer {
   to {
       background-position: 10000%;
   }
+}
+
+@keyframes fade-in {
+  from {
+      opacity: : 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+      opacity: : 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+#expanded-container {
+    display: none;
+    opacity: 0;
+}
+
+#shrunk-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+
+#shrunk-content {
+    background-color: #0A0A0A;
+    color: #FAEEDD;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+#shrunk-content h2{
+    margin: 0 10px;
+}
+
+@media screen and (pointer: coarse) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media screen and (pointer: fine) {
+    .mobile {
+        display: none;
+    }
+}
+
+@keyframes shrink-circle {
+  from {
+      width: 150px;
+      height: 150px;
+  }
+  to {
+      width: 0px;
+      height: 0px;
+  }
+}
+
+#pointer-circle-container {
+    display: none;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+#pointer-circle {
+    border-radius: 50%;
+    border: 5px solid #DDDDFF;
+    animation: shrink-circle 3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -9,33 +9,59 @@
     </head>
     <body>
 
-        <header>
-                <h1>
-                    Maluch
-                </h1>
-        </header>
-
-        <main>
-            <section>
-                <div id="road">
-                    <div id="maluch-container">
-                        <figure id="maluch">
-                            <img src="./img/maluch.png" />
-                        </figure>
-                        <figure id="back-wheel" class="wheel">
-                            <img src="./img/wheel.png" />
-                        </figure>
-                        <figure id="front-wheel" class="wheel">
-                            <img src="./img/wheel.png" />
-                        </figure>
+        <div id="shrunk-container">
+            <section id="shrunk-content">
+                <h2>Make your dreams come true</h2>
+                <div id="hover-cta">
+                    <p class="cta-text mobile">
+                        Tap or hold to see more
+                    </p>
+                    <p class="cta-text desktop">
+                        Click or hover to see more
+                    </p>
+                </div>
+                <div id="pointer-circle-container">
+                    <div id="pointer-circle">
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
 
-        <footer id="footer">
-            Footer
-        </footer>
+        <div id="expanded-container">
+            <header>
+                <h1>
+                    Maluch
+                </h1>
+                <button id="shrink-button" type="button" name="shrink-button">X</button>
+            </header>
+
+            <main>
+                <section id="expanded-content">
+
+                    <div id="road">
+                        <div id="maluch-container">
+                            <p id="swipe-tooltip" class="mobile">
+                                <span>
+                                    Swipe to move the car
+                                </span>
+                            </p>
+                            <div id="maluch">
+                            </div>
+                            <div id="back-wheel" class="wheel">
+                            </div>
+                            <div id="front-wheel" class="wheel">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+
+            <footer id="footer">
+                Footer
+            </footer>
+        </div>
+
 
         <script type="text/javascript" src="app.js"></script>
 
